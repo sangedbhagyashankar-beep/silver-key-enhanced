@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply font-body text-charcoal-800 bg-cream;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5 { @apply font-display; }
+}
+
+@layer components {
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-gold-500 text-charcoal-900 font-body font-bold text-sm
+           uppercase tracking-widest rounded-sm transition-all duration-300
+           hover:bg-gold-600 hover:shadow-gold-glow active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           border border-gold-500 text-gold-500 font-body font-bold text-sm
+           uppercase tracking-widest rounded-sm transition-all duration-300
+           hover:bg-gold-500 hover:text-charcoal-900;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl text-charcoal-800;
+  }
+
+  .gold-divider {
+    @apply w-16 h-0.5 bg-gold-500 mx-auto my-4;
+  }
+
+  .card-luxury {
+    @apply bg-white rounded-sm shadow-luxury overflow-hidden
+           transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl;
+  }
+
+  .input-luxury {
+    @apply w-full px-4 py-3 border border-charcoal-200 rounded-sm
+           font-body text-sm text-charcoal-800 bg-white
+           focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500
+           placeholder:text-charcoal-400 transition-colors duration-200;
+  }
+
+  .nav-link {
+    @apply text-sm font-body font-bold uppercase tracking-widest
+           text-charcoal-600 hover:text-gold-500 transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Swiper customization */
+.swiper-pagination-bullet-active { background: #d4af37 !important; }
+.swiper-button-next::after,
+.swiper-button-prev::after { color: #d4af37 !important; font-size: 20px !important; }
+
+/* Date picker hotel style */
+.react-datepicker { font-family: 'Lato', sans-serif !important; border: 1px solid #e8e8e0 !important; }
+.react-datepicker__day--selected,
+.react-datepicker__day--in-range { background: #d4af37 !important; color: #0d0d08 !important; }
